@@ -1,0 +1,104 @@
+//multiple inheristance using Interface
+class Phone {
+  void call() {
+    System.out.println("phone is calling");
+  };
+
+  void sms() {
+    System.out.println("phone sending SMS");
+  }
+}
+
+interface ICamera {
+  void click();
+
+  void record();
+
+}
+
+interface IMusicplayer {
+  void play();
+
+  void pause();
+
+  void stop();
+}
+
+class SmartPhone extends Phone implements ICamera, IMusicplayer {
+
+  public void Videocall() {
+    System.out.println("Smartphone's camera is videocalling");
+  }
+
+  public void click() {
+    System.out.println("Smartphone's camera is clicking photos");
+  }
+
+  public void record() {
+    System.out.println("Smartphone's camera is recording video");
+  }
+
+  public void play() {
+    System.out.println("Smartphone's musicplayer is playing songs");
+  }
+
+  public void pause() {
+    System.out.println("Smartphone's musicplayer is pausing song");
+  }
+
+  public void stop() {
+    System.out.println("musicplayer is off");
+  }
+}
+
+class Samsung extends Phone implements ICamera, IMusicplayer {
+  public void Videocall() {
+    System.out.println("Samsung's camera is videocalling");
+  }
+
+  public void click() {
+    System.out.println("Samsung's camera is clicking photos");
+  }
+
+  public void record() {
+    System.out.println("Samsung's camera is recording video");
+  }
+
+  public void play() {
+    System.out.println("Samsung's musicplayer is playing songs");
+  }
+
+  public void pause() {
+    System.out.println("Samsung's musicplayer is pausing song");
+  }
+
+  @Override
+  public void stop() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'stop'");
+  }
+
+}
+
+public class InterfaceExample1 {
+  public static void main(String[] args) {
+
+    SmartPhone sp = new SmartPhone();
+
+    sp.click();
+    sp.Videocall();
+    sp.record();
+    sp.play();
+    sp.pause();
+    sp.stop();
+
+    Samsung sg = new Samsung();
+    sg.click();
+    sg.Videocall();
+    sg.record();
+    sg.play();
+    sg.pause();
+
+  }
+
+}
